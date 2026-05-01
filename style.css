@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #222831;
+}
+
+.page-banner {
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+    background: #374151;
+    color: white;
+}
+
+.banner-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+.page-banner h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+}
+
+.subtitle {
+    max-width: 720px;
+    margin: 1rem auto 0;
+    font-size: 1rem;
+    opacity: 0.92;
+}
+
+.layout-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 2.2fr) minmax(280px, 1fr);
+    gap: 1.75rem;
+    padding: 2rem 1.5rem 3rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.entry-panel,
+.entry-list-panel {
+    background: #374151;
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    padding: 1.75rem;
+}
+
+.entry-panel {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.entry-placeholder {
+    text-align: center;
+    color: #4b5563;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.entry-content {
+    display: grid;
+    gap: 1.25rem;
+    max-width: 760px;
+    width: 100%;
+    margin-inline: auto;
+}
+
+.entry-title {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: -0.04em;
+    color: #111827;
+}
+
+.entry-meta {
+    margin: 0;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.entry-body {
+    margin: 0;
+    color: white;
+    line-height: 1.78;
+    font-size: 1rem;
+}
+
+.entry-body p {
+    margin: 0 0 1rem;
+}
+
+.panel-header h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.35rem;
+}
+
+.panel-header p {
+    margin: 0;
+    color: white;
+}
+
+.entry-list {
+    margin-top: 1.25rem;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.entry-item {
+    background: #111827;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 1rem 1rem 0.95rem;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.entry-item:hover,
+.entry-item.active {
+    transform: translateY(-1px);
+    border-color: #c7d2fe;
+    box-shadow: 0 14px 40px rgba(59, 130, 246, 0.12);
+}
+
+.entry-item-title {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.entry-item-date {
+    display: block;
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+.upload-panel {
+    margin-top: 1.75rem;
+    padding: 1.25rem;
+    background: #1f2937;
+    border-radius: 1rem;
+}
+
+.upload-panel h3 {
+    margin: 0 0 0.5rem;
+    color: #e2e8f0;
+    font-size: 1.1rem;
+}
+
+.upload-panel p {
+    margin: 0 0 1rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.upload-panel input,
+.upload-panel button {
+    width: 100%;
+    border-radius: 0.85rem;
+    border: 1px solid #374151;
+    padding: 0.95rem 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+}
+
+.upload-panel input {
+    background: #111827;
+    color: white;
+}
+
+.upload-panel button {
+    background: #2563eb;
+    color: white;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.upload-panel button:hover {
+    background: #1d4ed8;
+}
+
+.upload-message {
+    margin: 0;
+    color: #a5f3fc;
+    font-size: 0.92rem;
+    min-height: 1.4rem;
+}
+
+.entry-item-title {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    color: white;
+}
+
+
+@media (max-width: 960px) {
+    .layout-shell {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-banner {
+        padding: 3rem 1rem 2.5rem;
+    }
+
+    .layout-shell {
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    .entry-panel,
+    .entry-list-panel {
+        padding: 1.25rem;
+        border-radius: 1.1rem;
+    }
+}
