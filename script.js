@@ -1,33 +1,5 @@
 const UPLOAD_KEY = "dimbel-upload-key";
-let entries = [
-    {
-        title: "Morning Pages: Energy in Motion",
-        date: "May 1, 2026",
-        content: [
-            "Today I leaned into the rhythm of a slow morning and found that the first draft of an idea always feels quieter than expected.",
-            "I took notes by hand, then built the outline digitally before returning to the pen. It helped keep the creative energy moving without losing the shape of the thought.",
-            "Each entry feels less like a log and more like a way to make the small daily shifts visible. That's the thing I want this journal to be.",
-        ],
-    },
-    {
-        title: "Design Patterns for Slow Work",
-        date: "April 27, 2026",
-        content: [
-            "A strong layout is not only about visual balance, it's also about giving the reader a place to begin and a place to return.",
-            "I experimented with a right-hand panel for navigation and a larger reading area on the left, which makes the experience feel more contemplative.",
-            "Consistency in spacing and typographic hierarchy allows the page to breathe, even when the content is dense.",
-        ],
-    },
-    {
-        title: "Why Entry-Based Pages Work",
-        date: "April 20, 2026",
-        content: [
-            "Breaking content into discrete entries makes it easier to choose what to focus on without overwhelming the page.",
-            "The navigation panel can be a simple list, but it plays a huge role in helping visitors discover and revisit entries.",
-            "A clean, centered reading panel with a strong title gives each post enough room to feel important.",
-        ],
-    },
-];
+let entries = [];
 
 const entryList = document.getElementById("entry-list");
 const entryDisplay = document.getElementById("entry-display");
@@ -36,51 +8,23 @@ const uploadKeyInput = document.getElementById("upload-key");
 const uploadButton = document.getElementById("upload-entry-btn");
 const uploadMessage = document.getElementById("upload-message");
 
-function formatDate(date) {
-    return date.toLocaleDateString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-    });
-}
-
-function loadSavedEntries() {
-    const stored = localStorage.getItem("journalEntries");
-    if (stored) {
-        try {
-            const parsed = JSON.parse(stored);
-            if (Array.isArray(parsed) && parsed.length) {
-                entries = parsed;
-            }
-        } catch (error) {
-            console.warn("Could not parse saved journal entries.", error);
-        }
-    }
-}
-
-function saveEntries() {
-    localStorage.setItem("journalEntries", JSON.stringify(entries));
-}
-
-function parseEntryFile(text, fileName) {
-    const title = fileName.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ").trim();
-    const paragraphs = text
-        .trim()
-        .split(/\r?\n\s*\r?\n/)
-        .map((block) => block.trim())
-        .filter(Boolean);
-
-    return {
-        title: title || "New Entry",
-        date: formatDate(new Date()),
-        content: paragraphs.length ? paragraphs : [text.trim() || ""],
-    };
-}
-
 function showUploadMessage(message, isError = false) {
     if (!uploadMessage) return;
     uploadMessage.textContent = message;
     uploadMessage.style.color = isError ? "#f87171" : "#a5f3fc";
+}
+
+async function fetchEntries() {
+    try {
+        const response = await fetch("/api/entries");
+        if (!response.ok) {
+            throw new Error("Unable to fetch entries from server.");
+        }
+        entries = await response.json();
+    } catch (error) {
+        showUploadMessage("Server unavailable. Entries cannot be loaded.", true);
+        console.error(error);
+    }
 }
 
 function renderEntryList() {
@@ -101,7 +45,14 @@ function renderEntryList() {
 
 function showEntry(index) {
     const entry = entries[index];
-    if (!entry) return;
+    if (!entry) {
+        entryDisplay.innerHTML = `
+            <div class="entry-placeholder">
+                <p>Select an entry from the list to read it here.</p>
+            </div>
+        `;
+        return;
+    }
 
     entryDisplay.innerHTML = `
         <article class="entry-content">
@@ -121,7 +72,7 @@ function showEntry(index) {
     });
 }
 
-function handleUpload() {
+async function handleUpload() {
     const file = fileInput.files[0];
     const typedKey = uploadKeyInput.value.trim();
 
@@ -136,16 +87,38 @@ function handleUpload() {
     }
 
     const reader = new FileReader();
-    reader.onload = () => {
-        const uploadedEntry = parseEntryFile(reader.result, file.name);
-        entries.unshift(uploadedEntry);
-        saveEntries();
-        renderEntryList();
-        showEntry(0);
-        showUploadMessage("Entry uploaded successfully.");
-        fileInput.value = "";
-        uploadKeyInput.value = "";
+    reader.onload = async () => {
+        try {
+            const response = await fetch("/api/entries", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    key: typedKey,
+                    fileName: file.name,
+                    content: reader.result,
+                }),
+            });
+
+            if (!response.ok) {
+                const result = await response.json();
+                throw new Error(result.error || "Upload failed.");
+            }
+
+            const newEntry = await response.json();
+            entries.unshift(newEntry);
+            renderEntryList();
+            showEntry(0);
+            showUploadMessage("Entry uploaded successfully.");
+            fileInput.value = "";
+            uploadKeyInput.value = "";
+        } catch (error) {
+            showUploadMessage(error.message, true);
+            console.error(error);
+        }
     };
+
     reader.onerror = () => {
         showUploadMessage("Unable to read the selected file.", true);
     };
@@ -153,8 +126,8 @@ function handleUpload() {
     reader.readAsText(file);
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    loadSavedEntries();
+window.addEventListener("DOMContentLoaded", async () => {
+    await fetchEntries();
     renderEntryList();
     showEntry(0);
 
