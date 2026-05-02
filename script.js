@@ -1,7 +1,7 @@
 let entries = [];
 
 async function fetchEntries() {
-  const res = await fetch("/posts/index.json");
+  const res = await fetch("/posts.json");
   const data = await res.json();
 
   // Load markdown content for each post
