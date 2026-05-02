@@ -17,7 +17,6 @@ const posts = files
 
     return {
       title: titleMatch ? titleMatch[1] : file.replace(".md", ""),
-      slug: post.slug,
       slug: file.replace(".md", "")
     };
   });

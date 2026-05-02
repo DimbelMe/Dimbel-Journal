@@ -15,6 +15,7 @@ async function fetchEntries() {
 
       return {
         title: post.title,
+        slug: post.slug,
         content: [content] // keep your structure compatible
       };
     })
