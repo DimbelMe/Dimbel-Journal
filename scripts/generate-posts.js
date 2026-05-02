@@ -13,7 +13,7 @@ const posts = files
     const content = fs.readFileSync(filePath, "utf-8");
 
     // Extract title from frontmatter
-    const titleMatch = content.match(/title:\s*"(.*?)"/);
+    const titleMatch = content.match(/title:\s*["']?(.*?)["']?\n/);
 
     return {
       title: titleMatch ? titleMatch[1] : file.replace(".md", ""),
