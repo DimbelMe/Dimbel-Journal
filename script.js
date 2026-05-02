@@ -1,3 +1,26 @@
+let entries = [];
+
+async function fetchEntries() {
+  const res = await fetch("/posts/index.json");
+  const data = await res.json();
+
+  // Load markdown content for each post
+  entries = await Promise.all(
+    data.map(async (post) => {
+      const mdRes = await fetch(`/posts/${post.slug}.md`);
+      const text = await mdRes.text();
+
+      // Remove frontmatter
+      const content = text.replace(/---[\s\S]*?---/, "");
+
+      return {
+        title: post.title,
+        content: [content] // keep your structure compatible
+      };
+    })
+  );
+}
+
 const entryList = document.getElementById("entry-list");
 const entryDisplay = document.getElementById("entry-display");
 
@@ -22,7 +45,7 @@ function showEntry(index) {
                 <h2 class="entry-title">${entry.title}</h2>
             </header>
             <div class="entry-body">
-                ${entry.content.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+                ${marked.parse(entry.content[0])}
             </div>
         </article>
     `;
@@ -33,7 +56,8 @@ function showEntry(index) {
     });
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    renderEntryList();
-    showEntry(0);
+window.addEventListener("DOMContentLoaded", async () => {
+  await fetchEntries();
+  renderEntryList();
+  showEntry(0);
 });
