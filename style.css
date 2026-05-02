@@ -33,7 +33,7 @@ body {
     opacity: 0.85;
 }
 
-.page-banner h1 {
+.site-title {
     margin: 0;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     line-height: 1;

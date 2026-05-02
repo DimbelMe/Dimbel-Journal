@@ -78,24 +78,27 @@ function goHome() {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-    document.querySelector(".site-title").addEventListener("click", goHome);
+    const titleEl = document.querySelector(".site-title");
+    if (titleEl) {
+        titleEl.addEventListener("click", goHome);
+    }
+
     await fetchEntries();
     renderEntryList();
 
     const hash = window.location.hash.replace("#", "");
 
     if (!hash || hash === "home") {
-        showHome();
         history.replaceState(null, "", "#home");
-        return;
-    }
-
-    const index = entries.findIndex(e => e.slug === hash);
-
-    if (index !== -1) {
-        showEntry(index);
-    } else {
         showHome();
+    } else {
+        const index = entries.findIndex(e => e.slug === hash);
+
+        if (index !== -1) {
+            showEntry(index);
+        } else {
+            showHome();
+        }
     }
 });
 
