@@ -17,10 +17,9 @@ const posts = files
 
     return {
       title: titleMatch ? titleMatch[1] : file.replace(".md", ""),
+      slug: post.slug,
       slug: file.replace(".md", "")
     };
   });
 
 fs.writeFileSync(outputFile, JSON.stringify(posts, null, 2));
-
-console.log("✅ posts.json generated");

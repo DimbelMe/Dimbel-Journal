@@ -32,7 +32,10 @@ function renderEntryList() {
         button.innerHTML = `
             <strong class="entry-item-title">${entry.title}</strong>
         `;
-        button.addEventListener("click", () => showEntry(index));
+        button.addEventListener("click", () => {
+            history.pushState(null, "", `#${entry.slug}`);
+            showEntry(index);
+        });
         entryList.appendChild(button);
     });
 }
@@ -59,5 +62,25 @@ function showEntry(index) {
 window.addEventListener("DOMContentLoaded", async () => {
   await fetchEntries();
   renderEntryList();
+
+  const hash = window.location.hash.replace("#", "");
+
+  if (hash) {
+    const index = entries.findIndex(e => e.slug === hash);
+    if (index !== -1) {
+      showEntry(index);
+      return;
+    }
+  }
+
   showEntry(0);
+});
+
+window.addEventListener("popstate", () => {
+  const hash = window.location.hash.replace("#", "");
+
+  const index = entries.findIndex(e => e.slug === hash);
+  if (index !== -1) {
+    showEntry(index);
+  }
 });
