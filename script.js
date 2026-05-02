@@ -7,7 +7,7 @@ async function fetchEntries() {
   // Load markdown content for each post
   entries = await Promise.all(
     data.map(async (post) => {
-      const mdRes = await fetch(`/posts/${post.title}.md`);
+      const mdRes = await fetch(`/posts/${post.slug}.md`);
       const text = await mdRes.text();
 
       // Remove frontmatter
