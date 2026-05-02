@@ -60,27 +60,55 @@ function showEntry(index) {
     });
 }
 
+function showHome() {
+    entryDisplay.innerHTML = `
+        <div class="home">
+            <h2>Welcome</h2>
+            <p>Select a story to read.</p>
+        </div>
+    `;
+
+    const buttons = entryList.querySelectorAll(".entry-item");
+    buttons.forEach(button => button.classList.remove("active"));
+}
+
+function goHome() {
+    history.pushState(null, "", "#home");
+    showHome();
+}
+
 window.addEventListener("DOMContentLoaded", async () => {
-  await fetchEntries();
-  renderEntryList();
+    document.querySelector(".site-title").addEventListener("click", goHome);
+    await fetchEntries();
+    renderEntryList();
 
-  const hash = window.location.hash.replace("#", "");
+    const hash = window.location.hash.replace("#", "");
 
-  if (hash) {
-    const index = entries.findIndex(e => e.slug === hash);
-    if (index !== -1) {
-      showEntry(index);
-      return;
+    if (!hash || hash === "home") {
+        showHome();
+        history.replaceState(null, "", "#home");
+        return;
     }
-  }
 
-  showEntry(0);
+    const index = entries.findIndex(e => e.slug === hash);
+
+    if (index !== -1) {
+        showEntry(index);
+    } else {
+        showHome();
+    }
 });
 
 window.addEventListener("popstate", () => {
   const hash = window.location.hash.replace("#", "");
 
+  if (!hash || hash === "home") {
+    showHome();
+    return;
+  }
+
   const index = entries.findIndex(e => e.slug === hash);
+
   if (index !== -1) {
     showEntry(index);
   }
