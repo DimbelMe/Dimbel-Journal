@@ -2,7 +2,17 @@ const entries = [
     {
         "title": "A second in hell",
         "content": [
-            "Every once in a while, I seem to fall I seem to fail and apparently it makes me suffer more each time I seem to recognize what i can't do and set it as my goal, as if my soul is longing for a place it can not go. I've been stuck here, for centuries Centuries have passed since the last time i reached it Now I'm defeated, but im no defeatist. I failed so many times that I've recognized it's impossible.  No matter how much i try, no matter how much i do, no matter how much i plea, i can't escape from here. Is there maybe another way? Is there a solution i can't see? Or is this just my destiny? I want to see the light, to reach that higher peak, i want to see what they can't see, to finally feel glee and leave this place happily.  But i can't, and i won't, but no one can say i didn't try for if there's one thing i ran out is time, only time. If i had some more i may have been able to somehow create a path for my soul, but i didn't, and i won't.  This is my end, my soul will be consumed by the judges and i will disappear, my essence, my memories, my entire existence will be erased and no one, nowhere, will remember my name.  I wave goodbye to this hell, for i shall never see it again. It's time to leave, tonight, it shall be my final night."
+            "Every once in a while, I seem to fall. I seem to fail and apparentlym it makes me suffer more each time.", 
+            "I seem to recognize what I can't do and set it as my goal, as if my soul is longing for a place it can not reach.", 
+            "I've been stuck here, for centuries. Centuries have passed since the last time I reached for it, too.", 
+            "Now I'm defeated, but not by my own accord. I failed so many times that I've recognized it's impossible.", 
+            "No matter how much I try, no matter how much I do, no matter how much I plea, I can't escape from this hell.", 
+            "Is there maybe another way? Is there a solution I can't see? Or is this just my destiny?",
+            "I want to see the light, to reach that highest peak, I want to see what they can't see, to finally feel glee and leave this place happily.", 
+            "But I can't, and I won't. Although no one can say that I didn't try. for if there's one thing I ran out of, it is time and only time.", 
+            "If I had some more I may have been able to somehow create a path for my soul, but I didn't, and I won't.", 
+            "This is my end, my soul will be consumed by the judges and I will disappear, my essence, my memories, my entire existence will cease.",
+            "And no one, nowhere, will remember my name. I wave goodbye to this hell, for I shall never see it again. It's time to leave, tonight, it shall be my final night."
         ]
     },
     {
@@ -21,7 +31,22 @@ const entries = [
     {
         "title": "Unconditional Love",
         "content": [
-            "This isn't a grand poem, nor a text to remember This won't be a story, or a tale, or a letter. This is me rambling and doing my best to explain that, whenever i think of something happy, whenever i smile, whenever i wake up with glee and energy to get up and go about my day, it is all thanks to you. I've done my fair share of things, things that have hurt me and helped me equally. I've tried my best for so long, and i know it's thanks to that, that i met you. You are, by far, the best thing in my life. Never before have I felt such an urge to obtain the sense of belonging that you produce in my heart. They say the first love is the only true love, then i can say that, before you, I didn't know what love was. You may not feel the same, but that's okay. To me rather than a defeatist stance it means that i can do my best to make you fall in love with me every single day, maybe with this strange attempt to romance you I gain an everlasting bond with whom i wish to have as a partner throughout eternity. This is nothing. I'd leave this place and not glance back once if it meant the best for you. I'd leave my habits and hobbies if it meant being there for you. I know you want me to be equally as happy as I wish you to. And that's why I can say with confidence today, that I love you, like I never knew. This is starting to get long, and although i could write a three thousand word essay of this feeling you give me and every day write a new one without repeating myself, although I could write songs and perform them in front of a thousand people or more just to explain to the masses and those who will listen just how much you mean to me, although i could become the man you depend on and be always there for you no matter the time or place. Although I could do that and so much more, today I will limit myself and be satisfied with saying I love you"
+            "This isn't a grand poem, nor a text to remember. This won't be a story, or a tale, or a letter.", 
+            "This is me rambling and doing my best to explain that, whenever I think of something happy, whenever I smile, whenever I wake up with glee and energy to get up and go about my day, it is all thanks to you.", 
+            "I've done my fair share of things, things that have hurt me and helped me equally.", 
+            "I've tried my best for so long, and I know it's thanks to that, that I met you.", 
+            "You are, by far, the best thing in my life. Never before have I felt such an urge to obtain the sense of belonging that you produce in my heart.", 
+            "They say the first love is the only true love, then I can say that, before you, I didn't know what love was.", 
+            "You may not feel the same, but that's okay. To me, rather than a defeatist stance, it means that I can do my best to make you fall in love with me every single day.", 
+            "Maybe with this strange attempt at romance, I can gain an everlasting bond with whom I wish to have as a partner throughout eternity.", 
+            "This is nothing. I'd leave this place and not glance back once, if it meant the best for you.", 
+            "I'd leave behind my habits and hobbies, if it meant being there for you.", 
+            "I know you want me to be as happy as I wish you to. And that's why I can say with confidence, today, that I love you.", 
+            "Like I never knew.",
+            "This is starting to get long, and although I could write a three thousand word essay of this feeling you give me.",
+            "Although I could write songs and sonnets, and perform them in front of a thousand people or more, just to explain to the masses and those who will listen precisely how much you mean to me",
+            "Although I could become the man you depend on and be always there for you, no matter the time or place.", 
+            "Although I could do that and so much more, today I will limit myself by saying I love you"
         ]
     },
     {
@@ -29,29 +54,23 @@ const entries = [
         "content": [
             "After many years, I've found it. Thomas always thought a fool of me, oh but this will show him, this will show them all.  I'm not crazy, my entire life's investigation has culminated and come to this.",
             "The idol. The golden idol of a long lost civilization, of which we know nothing. Not their language, nor their presence, nor their time or place in history. They always thought of me as some crazy storyteller, whenever i told of my findings, albeit with no proof.",
-            "They'll learn my name and kiss the ground i walk on. I will be bigger than everyone and anyone else. My name will be on TV, they will make movies of me and my findings, I'll inspire an entire new generation-...",
+            "They'll learn my name and kiss the ground I walk on. I will be bigger than everyone and anyone else. My name will be on TV, they will make movies of me and my findings, I'll inspire an entire new generation-...",
             "No. I can't. If they know this is real, they'll come here. The golden city will be theirs, not mine. I cannot allow that, no. This is mine, all mine. I discovered it and i own it. I've got a better idea, i shall make this my home. I will make this place my own and stride through the golden halls and temples with the confidence of a god. This is my place, my life my home.",
             "Yes. This is all mine. And this is where I'll die."
         ]
     },
     {
-        "title": "Existence",
-        "content": [
-            "I've lost myself in a turbulent dream, a place that i could not comprehend no matter how much i tried, this place had no beggining or end, it made no sense. It was a hurricane of letters, a storm of words, I lost myself in the infinite sense of a book. It narrated my story, from birth to death, it allowed me to see every committed mistake, and force me to repeat them time and time again. Now i see how foolish i was, to believe that life is all there is to life. I forgot the concept of existence for a while, for a while i saw it as a coincidence but alas, each existence has a meaning, it has a motive and objective. It's not the life we live but the ones we impact on, it's not me but us, not just us but them, too, it's every human, every existence, every life in this world of ours, everything is impacted in and between themselves, and its thanks to this that i realize today, you impacted my life in such a beautiful manner, you turned my existence into a precious excuse for me to attempt my best in this world. It's thanks to you that today i can say; I'm proud of who i am, and i am proud of you. For acting as you do, for being stronger than i was before i fell in this dream and forgot who i am."
-        ]
-    },
-    {
         "title": "God's Forgiveness",
         "content": [
-            "There's something special about this place. I can't seem to find an end. I got myself lost in between the trees and they themselves got lost in me. I seem to be a god, but no, I'm no more than a mortal. I can't seem to remember how i ended up here, but i can't find the will to leave.",
+            "There's something special about this place. I can't seem to find an end. I got myself lost in between the trees and they themselves got lost in me. I seem to be a god, but no, I'm no more than a mortal. I can't seem to remember how I ended up here, but I can't find the will to leave.",
             "The endless treeline, the majestic greenery, the never ending sky that hides behind the branches that proliferic on the peak of the trees. The awe inspiring creatures that inhabit this place, the birds that look down upon me with their black pearly eyes, with a hidden intelligence behind them.",
-            "Not all creatures are friendly, there are some amalgamations created by negatives thoughts, they hide in the shadows and prey on me during night. They don't scare me though, i know what they are, i know the pain they went through, i only wish for them to rest."
+            "Not all creatures are friendly, there are some amalgamations created by negatives thoughts, they hide in the shadows and prey on me during night. They don't scare me though, I know what they are, I know the pain they went through, I only wish for them to rest."
         ]
     },
     {
         "title": "Mask",
         "content": [
-            "Sometimes i wonder if i am truly kind or if it's just a version of me that i present to others in search of approval. Maybe it's not even that, but instead i use it in a manner of showing what i believe is socially correct. Or maybe I'm just playing with people in order to better understand how humans should behave.  I am a human, at least i try to act like one since I'm not entirely sure. No one ever told me what it means to be human, or what it means to act like one. Why are humans so different from one another, even if they are from the same species? Does that make some more human than others? Does that establish a standard for human behavior? I wonder, sometimes, if I'm human at all. I act so differently yet so alike, i was born in earth, was hugged by human arms and yet i question myself time and time again. Am i human? What does that mean? Should i leave this world and try again, in a place where no one has ever seen something that looks like me? Maybe its time to depart from here and find my place in the infinite cosmos that has called me throughout my entire life. Maybe, it's time to go."
+            "Sometimes I wonder if I am truly kind or if it's just a version of me that I present to others in search of approval. Maybe it's not even that, but instead I use it in a manner of showing what I believe is socially correct. Or maybe I'm just playing with people in order to better understand how humans should behave.  I am a human, at least I try to act like one since I'm not entirely sure. No one ever told me what it means to be human, or what it means to act like one. Why are humans so different from one another, even if they are from the same species? Does that make some more human than others? Does that establish a standard for human behavior? I wonder, sometimes, if I'm human at all. I act so differently yet so alike, I was born in earth, was hugged by human arms and yet I question myself time and time again. Am I human? What does that mean? Should I leave this world and try again, in a place where no one has ever seen something that looks like me? Maybe it's time to depart from here and find my place in the infinite cosmos that has called me throughout my entire life. Maybe, it's time to go."
         ]
     },
     {
@@ -95,12 +114,6 @@ const entries = [
             "I guess that's really sad, at least the way you put it. But what if they are happy with how they are now? Maybe they simply don't see a need for change?",
             "Maybe, yeah. Maybe they don't, that'd be nice. Maybe someday we might feel the same.",
             "Someday."
-        ]
-    },
-    {
-        "title": "A Lovely Dream",
-        "content": [
-            "The sun shines upon the side of a mountain, a mountain that stands tall and proud, filled with greenery. There's trees and bushes, birds and bees, flowers bloom and die on that side but there's more, there's a road. That road extends a few miles, from the big city at the foot of the mountain where the sun has yet to reach, to a small house on the side of the mountain. And as the sun smiles upon it and it's warmth enters through the window, someone inside awakens. There's a man and a woman, there's a few animals inside, there's a beautiful artwork plastered on the wall. The man gets up and opens the door to the outside. Bathing in sunlight as the dogs run happily, he goes back to the kitchen and prepare some breakfast. And after a quiet session of cooking, he brings it to the bed. The woman awakens and they enjoy the food together, smiling and laughing in a quiet manner. There's life outside, it's filled with greenery and the occasional bark. But there's life inside, a quiet house filled with love, a house that is peaceful and safe. A little piece of heaven as some say. A beautiful stay where the man and woman share their infinite love for each other. That's our house, our home, and someday it'll be true."
         ]
     },
     {
@@ -290,7 +303,7 @@ const entries = [
             "I spoke, for the first time. Not this body, but me. My real voice came out in an alluring verse, telling the young child to doubt the words from his mother, as I could see what he couldn't, and saw mother hiding a knife behind her smile.",
             "My voice became comfort, he trusted me and I guided him. A teenage boy who I guided through the rugged streets to avoid danger, whom I taught how to word his concerns so his parents would take him seriously. A foolish boy, whom I told, step by step, how to get rid of his own family. And he trusted me.",
             "It may not have been this way in the beginning, but it is so now. I am evil, albeit not by nature, I am sure of it now. I want him to fulfill my wishes, as he belongs to me now.",
-            "The police came in, breaking into the house. The grown man knew exactly what to do, but they were well armed. They saw the dozens of bags, in which dozens of bodies he hides, they saw the trails of blood and his bloody face. Smile.",
+            "The police came in, breaking into the house. The grown man knew exactly what to do, but they were well armed. They saw the dozens of bags, in which dozens of bodies he hides, they saw the trails of blood and his bloody face... Smile.",
             "We fled the country, the continent, started a new life. He became a florist, a pianist, a tattoo artist and made scientifical discoveries thanks to my insights. We lived oh so many lives, throughout his lifespan. He's old now, and I know death is bewitching him with promises of the after life.",
             "I see him go, and with his departure, so goes my mind. I see not the promised eden, not a hellish afterlife. I see the world that we lived in, but through another human's eyes.",
             "Maybe I'll be different this time, maybe I'll be a medic. I can turn this baby into anything and everyone will give him merits. I can become this species savior, I can be a devil in his world. I may create a religion and take control of those foolish boys. I can do anything I wish, and I shall do so. And so no one will recognize me... maybe I'll sleep, for a few hundred years or so."
