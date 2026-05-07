@@ -23,4 +23,6 @@ We know a few things. His MO, his approximate age, the fact that he has forensic
 
 My name is plastered in every scene. Or hidden within the pages of delusion left behind. Sometimes it's a center piece of his insanity, other times just a foot note at the end of it. 
 
-But I don't understand why. No prints, no face, no knowledge of his existence. It's a ghost that wants to send a message
+But I don't understand why. No prints, no face, no knowledge of his existence. It's a ghost that wants to send a message. And I've tried, time and time again, to understand. 
+
+My name. Why? Who could it be? Someone I put behind bars? Someone who was affected by my decisions in the past? I don't know, and I may never know. So no matter what he throws at me, I will push through and find him. He will pay for his atrocities.
