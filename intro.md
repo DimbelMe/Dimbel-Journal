@@ -1,5 +1,10 @@
 ---
-title: "Welcome to Dimbel's Journal"
+title: Welcome!
 ---
+Select a story to the right to begin reading!
 
-This is the intro section of your site. Edit the title and body here to update the homepage intro content.
+Newest: An Old One
+
+
+
+I still need to do categories.
