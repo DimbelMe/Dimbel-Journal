@@ -14,3 +14,14 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+collections:
+  - name: "intro"
+    label: "Intro"
+    files:
+      - name: "intro"
+        label: "Intro"
+        file: "intro.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
