@@ -1,5 +1,8 @@
 let entries = [];
+let introMarkdown = "";
 
+
+// Fetch posts and their markdown content
 async function fetchEntries() {
   const res = await fetch("/posts.json");
   const data = await res.json();
@@ -20,6 +23,18 @@ async function fetchEntries() {
       };
     })
   );
+}
+
+// Fetch intro markdown content
+async function fetchIntro() {
+  try {
+    const res = await fetch("/intro.md");
+    const text = await res.text();
+    introMarkdown = text.replace(/---[\s\S]*?---/, "").trim();
+  } catch (error) {
+    console.error("Unable to load intro.md:", error);
+    introMarkdown = "<p>Select a story to read.</p>";
+  }
 }
 
 const entryList = document.getElementById("entry-list");
@@ -63,8 +78,7 @@ function showEntry(index) {
 function showHome() {
     entryDisplay.innerHTML = `
         <div class="home">
-            <h2>Welcome</h2>
-            <p>Select a story to read.</p>
+            ${marked.parse(introMarkdown || "<p>Select a story to read.</p>")}
         </div>
     `;
 
@@ -83,7 +97,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         titleEl.addEventListener("click", goHome);
     }
 
-    await fetchEntries();
+    await Promise.all([fetchIntro(), fetchEntries()]);
     renderEntryList();
 
     const hash = window.location.hash.replace("#", "");
